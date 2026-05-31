@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Projects — Dimension Group architecture, interiors, and BIM." />
+    <title>Projects — Dimension Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="grid-bg">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">Dimension <span>Group</span></a>
+        <nav class="nav-desktop" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" aria-current="page">Projects</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-secondary" href="contact.html#quote">Request a quote</a>
+          <a
+            class="btn btn-whatsapp-header"
+            data-whatsapp
+            data-whatsapp-prefill="Hi Dimension Group — I'd like to chat about a project."
+            >WhatsApp</a
+          >
+        </div>
+        <button type="button" class="btn-nav-toggle" aria-expanded="false" aria-controls="nav-mobile">
+          Menu
+        </button>
+      </div>
+      <nav id="nav-mobile" class="nav-mobile" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html#quote">Request a quote</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section section-tight">
+        <div class="container">
+          <p class="section-label">Work</p>
+          <h1>Projects</h1>
+          <p style="max-width: 42em">
+            A rolling selection of completed, current, and sample engagements. To add a project,
+            append an entry to <code style="font-size: 0.95em">data/projects.json</code> (image
+            URL, name, location, service, categories, description, featured flag).
+          </p>
+          <div class="form-row" style="max-width: 280px; margin-top: var(--space-lg)">
+            <label for="project-filter">Filter by category</label>
+            <select id="project-filter">
+              <option value="">All</option>
+              <option value="Architecture">Architecture</option>
+              <option value="Interior Design">Interior design</option>
+              <option value="BIM">BIM</option>
+              <option value="Residential">Residential</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Technical Documentation">Technical documentation</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container">
+          <div id="all-projects" class="projects-grid" aria-live="polite"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <h4>Dimension Group</h4>
+          <p style="margin: 0; font-size: 0.9375rem; max-width: 22em">
+            Architecture, interior design, and BIM consulting for residential and commercial work.
+          </p>
+        </div>
+        <div>
+          <h4>Service regions</h4>
+          <ul class="footer-regions">
+            <li>South Africa</li>
+            <li>United Kingdom</li>
+            <li>United Arab Emirates</li>
+            <li>Remote / international</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p style="margin: 0 0 var(--space-xs)">
+            <a href="contact.html">Contact &amp; socials</a>
+          </p>
+          <p style="margin: 0; font-size: 0.875rem">
+            <a href="mailto:hello@dimensiongroup.example">hello@dimensiongroup.example</a>
+          </p>
+        </div>
+      </div>
+      <p class="footer-bottom">&copy; Dimension Group. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+  </body>
+</html>

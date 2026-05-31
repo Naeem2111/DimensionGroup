@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Dimension Group — quotes, WhatsApp, email, and socials." />
+    <title>Contact — Dimension Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="grid-bg">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">Dimension <span>Group</span></a>
+        <nav class="nav-desktop" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-secondary" href="#quote">Request a quote</a>
+          <a
+            class="btn btn-whatsapp-header"
+            data-whatsapp
+            data-whatsapp-prefill="Hi Dimension Group — I'd like to chat about a project."
+            >WhatsApp</a
+          >
+        </div>
+        <button type="button" class="btn-nav-toggle" aria-expanded="false" aria-controls="nav-mobile">
+          Menu
+        </button>
+      </div>
+      <nav id="nav-mobile" class="nav-mobile" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="#quote">Request a quote</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section section-tight" id="consultation">
+        <div class="container contact-layout">
+          <div>
+            <p class="section-label">Contact</p>
+            <h1>Quotes, consultations, and collaborations</h1>
+            <p>
+              Reach out by form, email, or WhatsApp. For structured quotes, use the business enquiry
+              flow — it asks a few targeted questions based on the service you select.
+            </p>
+            <div class="contact-card">
+              <strong>Email</strong>
+              <a href="mailto:hello@dimensiongroup.example">hello@dimensiongroup.example</a>
+            </div>
+            <div class="contact-card">
+              <strong>WhatsApp</strong>
+              <a
+                data-whatsapp
+                data-whatsapp-prefill="Hi Dimension Group — I'd like to discuss a project."
+                >Open chat</a
+              >
+              <span style="display: block; font-size: 0.875rem; color: var(--muted); margin-top: 0.25rem"
+                >Replace the number in <code>js/main.js</code> with your business line.</span
+              >
+            </div>
+            <div class="contact-card">
+              <strong>Social</strong>
+              <p style="margin: 0; font-size: 0.9375rem">
+                <!-- Replace hrefs with your profiles -->
+                <a href="#" aria-label="LinkedIn (placeholder)">LinkedIn</a> ·
+                <a href="#" aria-label="Instagram (placeholder)">Instagram</a> ·
+                <a href="#" aria-label="Behance (placeholder)">Behance</a>
+              </p>
+            </div>
+            <div class="contact-card">
+              <strong>Service areas</strong>
+              <p style="margin: 0; font-size: 0.9375rem">
+                South Africa, United Kingdom, United Arab Emirates, and remote international
+                projects. Additional country landing pages (e.g. Ireland, EU) can slot into the same
+                site structure later.
+              </p>
+            </div>
+          </div>
+          <div>
+            <h2 style="font-size: 1.25rem; margin-top: 0">Quick message</h2>
+            <p style="font-size: 0.9375rem; color: var(--muted)">General questions — opens your email client with the message.</p>
+            <form id="simple-contact-form" class="form-panel">
+              <div class="form-row">
+                <label for="simple-name">Name</label>
+                <input id="simple-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-row">
+                <label for="simple-email">Email</label>
+                <input id="simple-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-row">
+                <label for="simple-message">Message</label>
+                <textarea id="simple-message" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send via email</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="quote">
+        <div class="container">
+          <p class="section-label">Business enquiry</p>
+          <h2>Request a quote or book a consultation</h2>
+          <p style="max-width: 40em">
+            Step 1: choose a service. Step 2: answer a short questionnaire. Step 3: your details —
+            submit opens an email with everything populated. For production, you can point this
+            form to Formspree, Netlify Forms, or your own endpoint instead of <code>mailto:</code>.
+          </p>
+
+          <form id="lead-wizard" class="form-panel" style="margin-top: var(--space-lg); max-width: 100%">
+            <div class="form-step is-active">
+              <h3>Which service fits best?</h3>
+              <p class="section-label" style="letter-spacing: 0.08em">Select one to continue</p>
+              <div class="wizard-service-btns">
+                <button type="button" class="btn btn-secondary" data-select-service="Interior Design">
+                  Interior design
+                </button>
+                <button type="button" class="btn btn-secondary" data-select-service="Architecture">
+                  Architecture
+                </button>
+                <button type="button" class="btn btn-secondary" data-select-service="BIM Services">
+                  BIM services
+                </button>
+              </div>
+            </div>
+
+            <div class="form-step">
+              <h3>Project details</h3>
+              <p>Tailored questions based on your selection.</p>
+
+              <!-- Architecture -->
+              <div class="form-row">
+                <label for="arch-type">Building type</label>
+                <select
+                  id="arch-type"
+                  name="arch-type"
+                  data-service="Architecture"
+                  data-service-field
+                  data-label="Building type"
+                >
+                  <option value="">Select…</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="arch-scope">Scope / brief type</label>
+                <select
+                  id="arch-scope"
+                  name="arch-scope"
+                  data-service="Architecture"
+                  data-service-field
+                  data-label="Scope / brief type"
+                >
+                  <option value="">Select…</option>
+                  <option value="New build">New build</option>
+                  <option value="Alteration">Alteration</option>
+                  <option value="Addition">Addition</option>
+                  <option value="Second dwelling">Second dwelling</option>
+                  <option value="Separate entrance">Separate entrance</option>
+                  <option value="Council submission">Council submission</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="arch-location">Property location</label>
+                <input
+                  id="arch-location"
+                  name="arch-location"
+                  type="text"
+                  data-service="Architecture"
+                  data-service-field
+                  data-label="Property location"
+                  placeholder="City, region, country"
+                />
+              </div>
+              <div class="form-row">
+                <label for="arch-plans">Existing plans?</label>
+                <select
+                  id="arch-plans"
+                  name="arch-plans"
+                  data-service="Architecture"
+                  data-service-field
+                  data-label="Existing plans"
+                >
+                  <option value="">Select…</option>
+                  <option value="Yes — CAD / PDF">Yes — CAD / PDF</option>
+                  <option value="Yes — paper / scans only">Yes — paper / scans only</option>
+                  <option value="No — starting from scratch">No — starting from scratch</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="arch-stage">Current project stage</label>
+                <select
+                  id="arch-stage"
+                  name="arch-stage"
+                  data-service="Architecture"
+                  data-service-field
+                  data-label="Project stage"
+                >
+                  <option value="">Select…</option>
+                  <option value="Idea / feasibility">Idea / feasibility</option>
+                  <option value="Concept design">Concept design</option>
+                  <option value="Planning / approvals">Planning / approvals</option>
+                  <option value="Technical design">Technical design</option>
+                  <option value="Construction / site">Construction / site</option>
+                </select>
+              </div>
+
+              <!-- Interior Design -->
+              <div class="form-row">
+                <label for="int-sector">Sector</label>
+                <select
+                  id="int-sector"
+                  name="int-sector"
+                  data-service="Interior Design"
+                  data-service-field
+                  data-label="Sector"
+                >
+                  <option value="">Select…</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                  <option value="Hospitality">Hospitality</option>
+                  <option value="Retail">Retail</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="int-spaces">Spaces needing design</label>
+                <textarea
+                  id="int-spaces"
+                  name="int-spaces"
+                  data-service="Interior Design"
+                  data-service-field
+                  data-label="Spaces needing design"
+                  placeholder="e.g. open plan living, main suite, reception, F&amp;B"
+                ></textarea>
+              </div>
+              <div class="form-row">
+                <label for="int-package">Deliverables needed</label>
+                <select
+                  id="int-package"
+                  name="int-package"
+                  data-service="Interior Design"
+                  data-service-field
+                  data-label="Deliverables needed"
+                >
+                  <option value="">Select…</option>
+                  <option value="Concept design">Concept design</option>
+                  <option value="Full design">Full design</option>
+                  <option value="Finishes">Finishes</option>
+                  <option value="Furniture">Furniture</option>
+                  <option value="Styling">Styling</option>
+                  <option value="Combination / not sure">Combination / not sure</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="int-loc-budget">Location &amp; approximate budget</label>
+                <textarea
+                  id="int-loc-budget"
+                  name="int-loc-budget"
+                  data-service="Interior Design"
+                  data-service-field
+                  data-label="Location and budget"
+                  placeholder="Location, currency range or ballpark"
+                ></textarea>
+              </div>
+
+              <!-- BIM -->
+              <div class="form-row">
+                <label for="bim-need">Primary BIM need</label>
+                <select
+                  id="bim-need"
+                  name="bim-need"
+                  data-service="BIM Services"
+                  data-service-field
+                  data-label="Primary BIM need"
+                >
+                  <option value="">Select…</option>
+                  <option value="Revit modelling">Revit modelling</option>
+                  <option value="Family creation">Family creation</option>
+                  <option value="BIM management">BIM management</option>
+                  <option value="Coordination">Coordination</option>
+                  <option value="Drawing production">Drawing production</option>
+                  <option value="Model auditing">Model auditing</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="bim-software">Software &amp; version</label>
+                <input
+                  id="bim-software"
+                  name="bim-software"
+                  type="text"
+                  data-service="BIM Services"
+                  data-service-field
+                  data-label="Software and version"
+                  placeholder="e.g. Revit 2024"
+                />
+              </div>
+              <div class="form-row">
+                <label for="bim-standards">Country / project standards</label>
+                <input
+                  id="bim-standards"
+                  name="bim-standards"
+                  type="text"
+                  data-service="BIM Services"
+                  data-service-field
+                  data-label="Standards"
+                  placeholder="e.g. UK BIM Framework, SANS, client BEP"
+                />
+              </div>
+              <div class="form-row">
+                <label for="bim-deadline">Project deadline</label>
+                <input
+                  id="bim-deadline"
+                  name="bim-deadline"
+                  type="text"
+                  data-service="BIM Services"
+                  data-service-field
+                  data-label="Deadline"
+                  placeholder="Target dates or milestones"
+                />
+              </div>
+
+              <div class="form-nav">
+                <button type="button" class="btn btn-secondary" id="wizard-back-1">Back</button>
+                <button type="button" class="btn btn-primary" id="wizard-next-1">Continue</button>
+              </div>
+            </div>
+
+            <div class="form-step">
+              <h3>Your details</h3>
+              <div class="form-row">
+                <label for="contact-region">Your region</label>
+                <select id="contact-region" name="region" required>
+                  <option value="">Select…</option>
+                  <option value="South Africa">South Africa</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Other / international">Other / international</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="contact-name">Full name</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="form-row">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="form-row">
+                <label for="contact-phone">Phone (optional)</label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+              <div class="form-row">
+                <label for="contact-message">Anything else we should know?</label>
+                <textarea id="contact-message" name="message"></textarea>
+              </div>
+              <div class="form-nav">
+                <button type="button" class="btn btn-secondary" id="wizard-back-2">Back</button>
+                <button type="submit" class="btn btn-primary">Submit enquiry (email)</button>
+              </div>
+              <p style="font-size: 0.8125rem; color: var(--muted); margin: var(--space-md) 0 0">
+                Prefer chat?
+                <a
+                  data-whatsapp
+                  data-whatsapp-prefill="Hi Dimension Group — I'm completing your enquiry form."
+                  >Continue on WhatsApp</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container">
+          <h2 style="font-size: 1.25rem">Map (optional)</h2>
+          <p style="max-width: 42em; font-size: 0.9375rem; color: var(--muted)">
+            Replace the embed below with your studio coordinates or remove this block. OpenStreetMap
+            example — no API key required.
+          </p>
+          <div class="map-embed">
+            <iframe
+              title="Map placeholder"
+              loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=18.35%2C-33.95%2C18.45%2C-33.90&amp;layer=mapnik"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <h4>Dimension Group</h4>
+          <p style="margin: 0; font-size: 0.9375rem; max-width: 22em">
+            Architecture, interior design, and BIM consulting for residential and commercial work.
+          </p>
+        </div>
+        <div>
+          <h4>Service regions</h4>
+          <ul class="footer-regions">
+            <li>South Africa</li>
+            <li>United Kingdom</li>
+            <li>United Arab Emirates</li>
+            <li>Remote / international</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p style="margin: 0 0 var(--space-xs)">
+            <a href="contact.html">Contact &amp; socials</a>
+          </p>
+          <p style="margin: 0; font-size: 0.875rem">
+            <a href="mailto:hello@dimensiongroup.example">hello@dimensiongroup.example</a>
+          </p>
+        </div>
+      </div>
+      <p class="footer-bottom">&copy; Dimension Group. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact-form.js"></script>
+  </body>
+</html>
