@@ -16,7 +16,9 @@
   <body class="grid-bg">
     <header class="site-header">
       <div class="header-inner">
-        <a class="logo" href="index.html">Dimension <span>Group</span></a>
+        <a class="logo" href="index.html">
+          <img src="assets/images/logo.png" alt="Dimension Group" width="240" height="64" />
+        </a>
         <nav class="nav-desktop" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
@@ -84,9 +86,8 @@
             <div class="contact-card">
               <strong>Service areas</strong>
               <p style="margin: 0; font-size: 0.9375rem">
-                South Africa, United Kingdom, United Arab Emirates, and remote international
-                projects. Additional country landing pages (e.g. Ireland, EU) can slot into the same
-                site structure later.
+                South Africa, United Kingdom, Germany, United Arab Emirates, Australia, and remote
+                international projects.
               </p>
             </div>
           </div>
@@ -117,224 +118,86 @@
           <p class="section-label">Business enquiry</p>
           <h2>Request a quote or book a consultation</h2>
           <p style="max-width: 40em">
-            Step 1: choose a service. Step 2: answer a short questionnaire. Step 3: your details —
-            submit opens an email with everything populated. For production, you can point this
-            form to Formspree, Netlify Forms, or your own endpoint instead of <code>mailto:</code>.
+            Step 1: choose a service (Architecture, BIM Management, BIM Coordination, Interior Design,
+            or Project Support). Step 2: company and project details. Step 3: your contact details —
+            submit opens an email with everything populated. For production, connect Formspree,
+            Netlify Forms, or your own endpoint instead of <code>mailto:</code>.
           </p>
 
-          <form id="lead-wizard" class="form-panel" style="margin-top: var(--space-lg); max-width: 100%">
+          <form id="lead-wizard" class="form-panel form-panel-wide" style="margin-top: var(--space-lg)">
             <div class="form-step is-active">
-              <h3>Which service fits best?</h3>
-              <p class="section-label" style="letter-spacing: 0.08em">Select one to continue</p>
+              <h3>Which service do you need?</h3>
+              <p class="section-label" style="letter-spacing: 0.08em">Step 1 — select one</p>
               <div class="wizard-service-btns">
-                <button type="button" class="btn btn-secondary" data-select-service="Interior Design">
-                  Interior design
-                </button>
                 <button type="button" class="btn btn-secondary" data-select-service="Architecture">
                   Architecture
                 </button>
-                <button type="button" class="btn btn-secondary" data-select-service="BIM Services">
-                  BIM services
+                <button type="button" class="btn btn-secondary" data-select-service="BIM Management">
+                  BIM Management
+                </button>
+                <button type="button" class="btn btn-secondary" data-select-service="BIM Coordination">
+                  BIM Coordination
+                </button>
+                <button type="button" class="btn btn-secondary" data-select-service="Interior Design">
+                  Interior Design
+                </button>
+                <button type="button" class="btn btn-secondary" data-select-service="Project Support">
+                  Project Support
                 </button>
               </div>
             </div>
 
             <div class="form-step">
-              <h3>Project details</h3>
-              <p>Tailored questions based on your selection.</p>
-
-              <!-- Architecture -->
+              <h3>About your project</h3>
+              <p class="section-label" style="letter-spacing: 0.08em">Step 2 — project details</p>
               <div class="form-row">
-                <label for="arch-type">Building type</label>
-                <select
-                  id="arch-type"
-                  name="arch-type"
-                  data-service="Architecture"
-                  data-service-field
-                  data-label="Building type"
-                >
-                  <option value="">Select…</option>
-                  <option value="Residential">Residential</option>
-                  <option value="Commercial">Commercial</option>
-                </select>
+                <label for="lead-company">Company name</label>
+                <input id="lead-company" name="company" type="text" autocomplete="organization" required />
               </div>
               <div class="form-row">
-                <label for="arch-scope">Scope / brief type</label>
-                <select
-                  id="arch-scope"
-                  name="arch-scope"
-                  data-service="Architecture"
-                  data-service-field
-                  data-label="Scope / brief type"
-                >
-                  <option value="">Select…</option>
-                  <option value="New build">New build</option>
-                  <option value="Alteration">Alteration</option>
-                  <option value="Addition">Addition</option>
-                  <option value="Second dwelling">Second dwelling</option>
-                  <option value="Separate entrance">Separate entrance</option>
-                  <option value="Council submission">Council submission</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <label for="arch-location">Property location</label>
+                <label for="lead-location">Project location</label>
                 <input
-                  id="arch-location"
-                  name="arch-location"
+                  id="lead-location"
+                  name="project-location"
                   type="text"
-                  data-service="Architecture"
-                  data-service-field
-                  data-label="Property location"
                   placeholder="City, region, country"
+                  required
                 />
               </div>
               <div class="form-row">
-                <label for="arch-plans">Existing plans?</label>
-                <select
-                  id="arch-plans"
-                  name="arch-plans"
-                  data-service="Architecture"
-                  data-service-field
-                  data-label="Existing plans"
-                >
+                <label for="lead-project-type">Project type</label>
+                <select id="lead-project-type" name="project-type" required>
                   <option value="">Select…</option>
-                  <option value="Yes — CAD / PDF">Yes — CAD / PDF</option>
-                  <option value="Yes — paper / scans only">Yes — paper / scans only</option>
-                  <option value="No — starting from scratch">No — starting from scratch</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <label for="arch-stage">Current project stage</label>
-                <select
-                  id="arch-stage"
-                  name="arch-stage"
-                  data-service="Architecture"
-                  data-service-field
-                  data-label="Project stage"
-                >
-                  <option value="">Select…</option>
-                  <option value="Idea / feasibility">Idea / feasibility</option>
-                  <option value="Concept design">Concept design</option>
-                  <option value="Planning / approvals">Planning / approvals</option>
-                  <option value="Technical design">Technical design</option>
-                  <option value="Construction / site">Construction / site</option>
-                </select>
-              </div>
-
-              <!-- Interior Design -->
-              <div class="form-row">
-                <label for="int-sector">Sector</label>
-                <select
-                  id="int-sector"
-                  name="int-sector"
-                  data-service="Interior Design"
-                  data-service-field
-                  data-label="Sector"
-                >
-                  <option value="">Select…</option>
-                  <option value="Residential">Residential</option>
+                  <option value="Residential — new build">Residential — new build</option>
+                  <option value="Residential — alteration">Residential — alteration</option>
                   <option value="Commercial">Commercial</option>
+                  <option value="Mixed-use">Mixed-use</option>
                   <option value="Hospitality">Hospitality</option>
                   <option value="Retail">Retail</option>
+                  <option value="BIM / documentation only">BIM / documentation only</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
               <div class="form-row">
-                <label for="int-spaces">Spaces needing design</label>
+                <label for="lead-budget">Budget range</label>
+                <select id="lead-budget" name="budget" required>
+                  <option value="">Select…</option>
+                  <option value="Under £50k / equivalent">Under £50k / equivalent</option>
+                  <option value="£50k – £150k / equivalent">£50k – £150k / equivalent</option>
+                  <option value="£150k – £500k / equivalent">£150k – £500k / equivalent</option>
+                  <option value="£500k+ / equivalent">£500k+ / equivalent</option>
+                  <option value="Prefer to discuss">Prefer to discuss</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="lead-message">Message</label>
                 <textarea
-                  id="int-spaces"
-                  name="int-spaces"
-                  data-service="Interior Design"
-                  data-service-field
-                  data-label="Spaces needing design"
-                  placeholder="e.g. open plan living, main suite, reception, F&amp;B"
+                  id="lead-message"
+                  name="message"
+                  placeholder="Scope, timeline, deliverables, or links to briefs"
+                  required
                 ></textarea>
               </div>
-              <div class="form-row">
-                <label for="int-package">Deliverables needed</label>
-                <select
-                  id="int-package"
-                  name="int-package"
-                  data-service="Interior Design"
-                  data-service-field
-                  data-label="Deliverables needed"
-                >
-                  <option value="">Select…</option>
-                  <option value="Concept design">Concept design</option>
-                  <option value="Full design">Full design</option>
-                  <option value="Finishes">Finishes</option>
-                  <option value="Furniture">Furniture</option>
-                  <option value="Styling">Styling</option>
-                  <option value="Combination / not sure">Combination / not sure</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <label for="int-loc-budget">Location &amp; approximate budget</label>
-                <textarea
-                  id="int-loc-budget"
-                  name="int-loc-budget"
-                  data-service="Interior Design"
-                  data-service-field
-                  data-label="Location and budget"
-                  placeholder="Location, currency range or ballpark"
-                ></textarea>
-              </div>
-
-              <!-- BIM -->
-              <div class="form-row">
-                <label for="bim-need">Primary BIM need</label>
-                <select
-                  id="bim-need"
-                  name="bim-need"
-                  data-service="BIM Services"
-                  data-service-field
-                  data-label="Primary BIM need"
-                >
-                  <option value="">Select…</option>
-                  <option value="Revit modelling">Revit modelling</option>
-                  <option value="Family creation">Family creation</option>
-                  <option value="BIM management">BIM management</option>
-                  <option value="Coordination">Coordination</option>
-                  <option value="Drawing production">Drawing production</option>
-                  <option value="Model auditing">Model auditing</option>
-                </select>
-              </div>
-              <div class="form-row">
-                <label for="bim-software">Software &amp; version</label>
-                <input
-                  id="bim-software"
-                  name="bim-software"
-                  type="text"
-                  data-service="BIM Services"
-                  data-service-field
-                  data-label="Software and version"
-                  placeholder="e.g. Revit 2024"
-                />
-              </div>
-              <div class="form-row">
-                <label for="bim-standards">Country / project standards</label>
-                <input
-                  id="bim-standards"
-                  name="bim-standards"
-                  type="text"
-                  data-service="BIM Services"
-                  data-service-field
-                  data-label="Standards"
-                  placeholder="e.g. UK BIM Framework, SANS, client BEP"
-                />
-              </div>
-              <div class="form-row">
-                <label for="bim-deadline">Project deadline</label>
-                <input
-                  id="bim-deadline"
-                  name="bim-deadline"
-                  type="text"
-                  data-service="BIM Services"
-                  data-service-field
-                  data-label="Deadline"
-                  placeholder="Target dates or milestones"
-                />
-              </div>
-
               <div class="form-nav">
                 <button type="button" class="btn btn-secondary" id="wizard-back-1">Back</button>
                 <button type="button" class="btn btn-primary" id="wizard-next-1">Continue</button>
@@ -342,14 +205,17 @@
             </div>
 
             <div class="form-step">
-              <h3>Your details</h3>
+              <h3>Your contact details</h3>
+              <p class="section-label" style="letter-spacing: 0.08em">Step 3 — we will respond by email</p>
               <div class="form-row">
                 <label for="contact-region">Your region</label>
                 <select id="contact-region" name="region" required>
                   <option value="">Select…</option>
                   <option value="South Africa">South Africa</option>
                   <option value="United Kingdom">United Kingdom</option>
+                  <option value="Germany">Germany</option>
                   <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Australia">Australia</option>
                   <option value="Other / international">Other / international</option>
                 </select>
               </div>
@@ -364,10 +230,6 @@
               <div class="form-row">
                 <label for="contact-phone">Phone (optional)</label>
                 <input id="contact-phone" name="phone" type="tel" autocomplete="tel" />
-              </div>
-              <div class="form-row">
-                <label for="contact-message">Anything else we should know?</label>
-                <textarea id="contact-message" name="message"></textarea>
               </div>
               <div class="form-nav">
                 <button type="button" class="btn btn-secondary" id="wizard-back-2">Back</button>
@@ -417,8 +279,9 @@
           <ul class="footer-regions">
             <li>South Africa</li>
             <li>United Kingdom</li>
+            <li>Germany</li>
             <li>United Arab Emirates</li>
-            <li>Remote / international</li>
+            <li>Australia</li>
           </ul>
         </div>
         <div>

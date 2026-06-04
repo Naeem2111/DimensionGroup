@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Dimension Group — architecture, interior design, and BIM services for clients in South Africa, the UK, and the UAE."
+      content="Dimension Group — design and BIM solutions across South Africa, the UK, Germany, the UAE, and Australia."
     />
     <title>Dimension Group — Design &amp; BIM consulting</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +19,9 @@
   <body class="grid-bg">
     <header class="site-header">
       <div class="header-inner">
-        <a class="logo" href="index.html">Dimension <span>Group</span></a>
+        <a class="logo" href="index.html">
+          <img src="assets/images/logo.png" alt="Dimension Group" width="240" height="64" />
+        </a>
         <nav class="nav-desktop" aria-label="Primary">
           <a href="index.html" aria-current="page">Home</a>
           <a href="about.html">About</a>
@@ -54,12 +56,12 @@
       <section class="hero">
         <div class="container hero-grid">
           <div>
-            <p class="section-label">Design · Architecture · BIM</p>
-            <h1>Structured design support for projects that demand clarity</h1>
+            <p class="section-label">ARCHITECTURE - BIM - INTERIORS</p>
+            <h1>Design and BIM solutions for projects that need clarity, coordination and quality</h1>
             <p class="hero-lede">
-              Dimension Group partners with homeowners, developers, architects, and design teams —
-              delivering interior concepts, architectural documentation, and BIM workflows across
-              South Africa, the UK, and the UAE.
+              Dimension Group delivers architecture, interior design, and BIM management for
+              developers, architects, and design teams worldwide — with deep BIM expertise across
+              South Africa, the United Kingdom, Germany, the United Arab Emirates, and Australia.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="contact.html#quote">Request a quote</a>
@@ -72,13 +74,27 @@
               >
             </div>
           </div>
-          <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual">
             <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80"
-              alt=""
+              class="hero-image"
+              src="assets/images/hero.jpg"
+              alt="Dimension Group architectural visualization"
               width="900"
-              height="1125"
+              height="675"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80';"
             />
+            <div class="hero-3d-frame">
+              <model-viewer
+                id="hero-model"
+                src="assets/models/hero.glb"
+                alt="Interactive project 3D model"
+                camera-controls
+                touch-action="pan-y"
+                shadow-intensity="0.6"
+                poster="assets/images/hero.jpg"
+              ></model-viewer>
+              <p class="hero-3d-fallback">Interactive 3D preview — add <code>assets/models/hero.glb</code> from your portfolio.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -178,12 +194,10 @@
           <ul class="footer-regions">
             <li>South Africa</li>
             <li>United Kingdom</li>
+            <li>Germany</li>
             <li>United Arab Emirates</li>
-            <li>Remote / international</li>
+            <li>Australia</li>
           </ul>
-          <p style="font-size: 0.8125rem; margin: var(--space-sm) 0 0; opacity: 0.7">
-            Structure supports future location pages (e.g. Ireland, wider Europe).
-          </p>
         </div>
         <div>
           <h4>Contact</h4>
@@ -198,7 +212,9 @@
       <p class="footer-bottom">&copy; Dimension Group. All rights reserved.</p>
     </footer>
 
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/hero-3d.js"></script>
     <script src="js/projects.js"></script>
   </body>
 </html>

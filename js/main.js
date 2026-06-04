@@ -4,7 +4,8 @@
   /* --- Site configuration (update before launch) --- */
   var WHATSAPP_NUMBER = "27123456789";
   var EMAIL = "hello@dimensiongroup.example";
-  /* WhatsApp: country code + number, no + or spaces. Replace placeholder email across HTML or use find/replace. */
+  var SITE_DOMAIN = "dimensiongroupglobal.com";
+  /* WhatsApp: country code + number, no + or spaces. Update EMAIL before launch. */
 
   function openMenu(open) {
     var btn = document.querySelector(".btn-nav-toggle");
@@ -32,6 +33,7 @@
   window.DimensionSite = window.DimensionSite || {};
   window.DimensionSite.WHATSAPP_NUMBER = WHATSAPP_NUMBER;
   window.DimensionSite.EMAIL = EMAIL;
+  window.DimensionSite.SITE_DOMAIN = SITE_DOMAIN;
 
   window.DimensionSite.whatsappHref = function (prefill) {
     var base = "https://wa.me/" + WHATSAPP_NUMBER;

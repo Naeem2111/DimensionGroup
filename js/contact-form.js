@@ -12,63 +12,43 @@
     current = n;
   }
 
-  function collectQuestionnaire() {
-    var fields = document.querySelectorAll("#lead-wizard [data-service-field]:not([disabled])");
-    var lines = [];
-    fields.forEach(function (el) {
-      var label =
-        el.getAttribute("data-label") ||
-        (el.labels && el.labels[0] ? el.labels[0].textContent : el.name);
-      var val = "";
-      if (el.type === "checkbox") {
-        val = el.checked ? "Yes" : "No";
-      } else {
-        val = el.value;
-      }
-      if (val) {
-        lines.push(label.trim() + ": " + val);
-      }
-    });
-    return lines.join("\n");
-  }
-
-  function syncServiceFields(service) {
-    document.querySelectorAll("[data-service-field]").forEach(function (el) {
-      var svc = el.getAttribute("data-service");
-      var show = svc === service;
-      el.disabled = !show;
-      el.closest(".form-row").style.display = show ? "" : "none";
-    });
+  function val(id) {
+    var el = document.getElementById(id);
+    return el ? el.value.trim() : "";
   }
 
   function buildEmailBody() {
-    var name = document.getElementById("contact-name").value.trim();
-    var email = document.getElementById("contact-email").value.trim();
-    var phone = document.getElementById("contact-phone").value.trim();
-    var region = document.getElementById("contact-region").value;
-    var message = document.getElementById("contact-message").value.trim();
-    var q = collectQuestionnaire();
     return (
       "New enquiry — Dimension Group\n\n" +
-      "Service interest: " +
+      "Service: " +
       selectedService +
       "\n" +
+      "Company: " +
+      val("lead-company") +
+      "\n" +
+      "Project location: " +
+      val("lead-location") +
+      "\n" +
+      "Project type: " +
+      val("lead-project-type") +
+      "\n" +
+      "Budget range: " +
+      val("lead-budget") +
+      "\n\n" +
       "Region: " +
-      region +
+      val("contact-region") +
       "\n" +
       "Name: " +
-      name +
+      val("contact-name") +
       "\n" +
       "Email: " +
-      email +
+      val("contact-email") +
       "\n" +
       "Phone: " +
-      phone +
+      val("contact-phone") +
       "\n\n" +
-      "--- Project details ---\n" +
-      q +
-      "\n\n--- Message ---\n" +
-      message
+      "--- Message ---\n" +
+      val("lead-message")
     );
   }
 
@@ -82,7 +62,9 @@
     document.querySelectorAll("[data-select-service]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         selectedService = btn.getAttribute("data-select-service");
-        syncServiceFields(selectedService);
+        document.querySelectorAll("[data-select-service]").forEach(function (b) {
+          b.classList.toggle("is-selected", b === btn);
+        });
         showStep(1);
       });
     });
@@ -90,6 +72,15 @@
     var next1 = document.getElementById("wizard-next-1");
     if (next1) {
       next1.addEventListener("click", function () {
+        var company = val("lead-company");
+        var location = val("lead-location");
+        var projectType = val("lead-project-type");
+        var budget = val("lead-budget");
+        var message = val("lead-message");
+        if (!company || !location || !projectType || !budget || !message) {
+          alert("Please complete all project fields before continuing.");
+          return;
+        }
         showStep(2);
       });
     }
@@ -110,10 +101,15 @@
 
     wizard.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (!selectedService) {
+        alert("Please select a service first.");
+        showStep(0);
+        return;
+      }
       var emailTo =
         (window.DimensionSite && window.DimensionSite.EMAIL) || "hello@dimensiongroup.example";
       var subject = encodeURIComponent(
-        "Enquiry: " + (selectedService || "General") + " — Dimension Group"
+        "Enquiry: " + selectedService + " — Dimension Group"
       );
       var body = encodeURIComponent(buildEmailBody());
       window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
@@ -129,9 +125,7 @@
         var email = document.getElementById("simple-email").value.trim();
         var msg = document.getElementById("simple-message").value.trim();
         var subject = encodeURIComponent("Website contact — Dimension Group");
-        var body = encodeURIComponent(
-          "Name: " + name + "\nEmail: " + email + "\n\n" + msg
-        );
+        var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + msg);
         window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
       });
     }

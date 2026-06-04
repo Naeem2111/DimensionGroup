@@ -139,16 +139,16 @@ img {
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--ink);
-  letter-spacing: -0.03em;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
-.logo span {
-  font-weight: 500;
-  color: var(--muted);
+.logo img {
+  display: block;
+  height: clamp(40px, 8vw, 56px);
+  width: auto;
+  max-width: min(240px, 55vw);
 }
 
 .nav-desktop {
@@ -403,26 +403,66 @@ main {
 
 .hero-visual {
   position: relative;
-  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 48px rgba(20, 20, 20, 0.08);
+}
+
+.hero-3d-frame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  min-height: 200px;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 24px 48px rgba(20, 20, 20, 0.08);
+  box-shadow: 0 12px 32px rgba(20, 20, 20, 0.06);
 }
 
-.hero-visual img {
+.hero-3d-frame model-viewer {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  min-height: 200px;
+  --poster-color: var(--bg);
 }
 
-.hero-visual::after {
-  content: "";
+.hero-3d-frame model-viewer:not(.is-ready) {
+  opacity: 0;
   position: absolute;
   inset: 0;
-  border: 1px solid rgba(255, 255, 255, 0.4);
   pointer-events: none;
+}
+
+.hero-3d-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: var(--space-md);
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted);
+  background: linear-gradient(135deg, var(--bg-elevated), var(--line));
+}
+
+.hero-3d-fallback code {
+  font-size: 0.8125rem;
 }
 
 /* Cards & services */
@@ -642,6 +682,10 @@ main {
   max-width: 640px;
 }
 
+.form-panel-wide {
+  max-width: 100%;
+}
+
 .form-row {
   margin-bottom: var(--space-md);
 }
@@ -709,6 +753,12 @@ main {
 .wizard-service-btns .btn {
   justify-content: flex-start;
   text-align: left;
+}
+
+.wizard-service-btns .btn.is-selected {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
 }
 
 .map-embed {
