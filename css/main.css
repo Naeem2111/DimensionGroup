@@ -8,9 +8,9 @@
   --muted: #6b6b68;
   --line: #e2e0db;
   --line-strong: #c9c6bf;
-  --accent: #1f2d26;
-  --accent-hover: #2a3d34;
-  --accent-warm: #9a7b52;
+  --accent: #1565c0;
+  --accent-hover: #0d47a1;
+  --accent-warm: #1976d2;
   --grid: rgba(20, 20, 20, 0.06);
   --radius: 2px;
   --radius-lg: 4px;
@@ -146,9 +146,9 @@ img {
 
 .logo img {
   display: block;
-  height: clamp(40px, 8vw, 56px);
+  height: clamp(44px, 9vw, 60px);
   width: auto;
-  max-width: min(240px, 55vw);
+  max-width: min(300px, 62vw);
 }
 
 .nav-desktop {
@@ -345,14 +345,14 @@ main {
 
 .btn-whatsapp,
 .btn-whatsapp-header {
-  background: #25d366;
+  background: var(--accent);
   color: #fff;
-  border-color: #25d366;
+  border-color: var(--accent);
 }
 
 .btn-whatsapp:hover,
 .btn-whatsapp-header:hover {
-  background: #1fb855;
+  background: var(--accent-hover);
   color: #fff;
 }
 
