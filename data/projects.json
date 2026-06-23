@@ -20,26 +20,6 @@
     "featured": true
   },
   {
-    "id": "proj-brewer-street",
-    "name": "Brewer Street",
-    "location": "London, UK",
-    "service": "Interior Design",
-    "categories": ["Interior Design", "Commercial", "Heritage"],
-    "description": "Mixed-use redevelopment with existing building capture, Revit model development, interior reconfiguration, heritage façade coordination, MEP coordination, and construction documentation support.",
-    "image": "assets/projects/brewer-street.png",
-    "featured": true
-  },
-  {
-    "id": "proj-harley-street",
-    "name": "Harley Street Private Healthcare",
-    "location": "London, UK",
-    "service": "Interior Design",
-    "categories": ["Interior Design", "Commercial", "Healthcare"],
-    "description": "Reception and clinical interior design — spatial planning, finishes, furniture layout, and documentation for a premium private healthcare environment.",
-    "image": "assets/projects/harley-street-render.png",
-    "featured": false
-  },
-  {
     "id": "proj-harley-street-plan",
     "name": "Harley Street — Background Plan",
     "location": "London, UK",

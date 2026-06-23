@@ -13,7 +13,7 @@
   --accent-warm: #1976d2;
   --grid: rgba(20, 20, 20, 0.06);
   --blueprint-line: rgba(21, 101, 192, 0.14);
-  --blueprint-bg: #f7f8fb;
+  --blueprint-bg: #ffffff;
   --radius: 2px;
   --radius-lg: 4px;
   --radius-xl: 14px;
@@ -126,7 +126,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247, 248, 251, 0.92);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
 }
@@ -198,9 +198,16 @@ img {
     display: block;
   }
 
-  .nav-desktop,
-  .nav-cta .btn:not(.btn-whatsapp-header) {
+  .nav-desktop {
     display: none;
+  }
+
+  .nav-cta .btn-whatsapp-header {
+    display: none;
+  }
+
+  .nav-cta .btn-secondary {
+    display: inline-flex;
   }
 }
 
@@ -388,9 +395,9 @@ main {
 .hero-blueprint-grid {
   position: absolute;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M72 0H0V72' fill='none' stroke='%231565C0' stroke-opacity='0.11' stroke-width='1' stroke-dasharray='5 7'/%3E%3C/svg%3E");
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M72 0H0V72' fill='none' stroke='%231565C0' stroke-opacity='0.12' stroke-width='1' stroke-dasharray='5 7'/%3E%3C/svg%3E");
   background-size: 72px 72px;
-  mask-image: linear-gradient(to bottom, #000 0%, #000 85%, transparent 100%);
 }
 
 .hero-blueprint-plan {
@@ -401,83 +408,8 @@ main {
   width: min(92%, 1080px);
   max-height: 75%;
   object-fit: contain;
-  opacity: 0.16;
+  opacity: 0.14;
   filter: grayscale(1) contrast(1.05);
-}
-
-.hero-marker {
-  flex-shrink: 0;
-  width: 1.375rem;
-  height: 1.375rem;
-  border-radius: 50%;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  font-size: 0.5625rem;
-  font-weight: 700;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.92);
-}
-
-.hero-blueprint-markers {
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.hero-blueprint-markers-y {
-  left: 2.5rem;
-  right: 2.5rem;
-}
-
-.hero-blueprint-markers-y--top {
-  top: 1.25rem;
-}
-
-.hero-blueprint-markers-y--bottom {
-  bottom: 1.25rem;
-}
-
-.hero-blueprint-markers-x {
-  flex-direction: column;
-  top: 3.5rem;
-  bottom: 3.5rem;
-}
-
-.hero-blueprint-markers-x--left {
-  left: 1rem;
-}
-
-.hero-blueprint-markers-x--right {
-  right: 1rem;
-}
-
-.hero-blueprint-dims {
-  position: absolute;
-  display: flex;
-  gap: 2.5rem;
-  font-size: 0.5625rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: rgba(21, 101, 192, 0.45);
-}
-
-.hero-blueprint-dims--top {
-  top: 2.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.hero-blueprint-dims--left {
-  left: 2.75rem;
-  top: 50%;
-  transform: translateY(-50%);
-  flex-direction: column;
-  gap: 2rem;
 }
 
 .hero-grid {
@@ -496,31 +428,8 @@ main {
 }
 
 @media (max-width: 900px) {
-  .hero-blueprint-markers-y {
-    left: 1rem;
-    right: 1rem;
-  }
-
-  .hero-blueprint-markers-x {
-    display: none;
-  }
-
-  .hero-blueprint-dims {
-    display: none;
-  }
-
-  .hero-blueprint-markers-y .hero-marker:nth-child(n + 8) {
-    display: none;
-  }
-
   .hero-grid {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .hero-blueprint-markers-y .hero-marker:nth-child(n + 5) {
-    display: none;
   }
 }
 
@@ -1174,4 +1083,20 @@ main {
   display: block;
   color: var(--ink);
   margin-bottom: 0.25rem;
+}
+
+/* Hidden until launch (remove this block to re-enable) */
+[data-whatsapp],
+.btn-whatsapp,
+.btn-whatsapp-header,
+.contact-hidden {
+  display: none !important;
+}
+
+.contact-card:has([data-whatsapp]) {
+  display: none;
+}
+
+p:has([data-whatsapp]) {
+  display: none;
 }
