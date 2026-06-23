@@ -57,15 +57,15 @@
 
 ### 5. Visuals & Interactive Elements
 
-- [ ] **Task:** Hero Image Replacement
+- [x] **Task:** Hero Image Replacement
   - **Priority:** Medium
   - **Section:** Home Page (Hero)
   - **Requirement:** Replace generic interior image with provided 3D model/image.
-  - **Status:** done — add `assets/images/hero.jpg`
+  - **Status:** Done — `assets/images/hero.jpg` (Albemarle Street)
 
-- [ ] **Task:** Portfolio Image Refresh
+- [x] **Task:** Portfolio Image Refresh
   - **Priority:** Medium
   - **Section:** General / Images
   - **Requirement:** Replace all current images with drawings and images from the portfolio.
-  - **Notes:** Integrate an interactive 3D model (WebGL) in a frame on the first page.
-  - **Status:** Pending — add `assets/models/hero.glb` and update `data/projects.json`
+  - **Notes:** WebGL slot on home page remains for optional `assets/models/hero.glb`
+  - **Status:** Done — `data/projects.json` + `assets/projects/`

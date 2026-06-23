@@ -1,62 +1,52 @@
 [
   {
-    "id": "proj-01",
-    "name": "Coastal Residence Refinement",
-    "location": "Western Cape, South Africa",
-    "service": "Interior Design",
-    "categories": ["Interior Design", "Residential"],
-    "description": "Full spatial planning and finishes for a family home overlooking the coast, with custom joinery direction and lighting layers.",
-    "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200&q=80",
+    "id": "proj-albermarle",
+    "name": "Albemarle Street",
+    "location": "Mayfair, London, UK",
+    "service": "Architecture",
+    "categories": ["Architecture", "Residential", "Commercial", "BIM"],
+    "description": "Luxury redevelopment in Mayfair — five storeys with lift access, multiple residential units, Revit-based BIM coordination, technical documentation, and construction support using point cloud capture.",
+    "image": "assets/projects/albermarle-street.png",
     "featured": true
   },
   {
-    "id": "proj-02",
-    "name": "Urban Loft Conversion",
+    "id": "proj-covent-garden",
+    "name": "Covent Garden Market",
+    "location": "London, UK",
+    "service": "BIM Services",
+    "categories": ["BIM", "Commercial", "Heritage"],
+    "description": "BIM delivery for a heritage market refurbishment — Revit modelling, multidisciplinary coordination, model auditing, drawing production, family creation, and BIM management.",
+    "image": "assets/projects/covent-garden-market.png",
+    "featured": true
+  },
+  {
+    "id": "proj-brewer-street",
+    "name": "Brewer Street",
+    "location": "London, UK",
+    "service": "Interior Design",
+    "categories": ["Interior Design", "Commercial", "Heritage"],
+    "description": "Mixed-use redevelopment with existing building capture, Revit model development, interior reconfiguration, heritage façade coordination, MEP coordination, and construction documentation support.",
+    "image": "assets/projects/brewer-street.png",
+    "featured": true
+  },
+  {
+    "id": "proj-harley-street",
+    "name": "Harley Street Private Healthcare",
+    "location": "London, UK",
+    "service": "Interior Design",
+    "categories": ["Interior Design", "Commercial", "Healthcare"],
+    "description": "Reception and clinical interior design — spatial planning, finishes, furniture layout, and documentation for a premium private healthcare environment.",
+    "image": "assets/projects/harley-street-render.png",
+    "featured": false
+  },
+  {
+    "id": "proj-harley-street-plan",
+    "name": "Harley Street — Background Plan",
     "location": "London, UK",
     "service": "Architecture",
-    "categories": ["Architecture", "Residential", "Alterations"],
-    "description": "Planning support, technical documentation, and coordination for a multi-level loft conversion within a conservation context.",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
-    "featured": true
-  },
-  {
-    "id": "proj-03",
-    "name": "Developer BIM Setup",
-    "location": "Dubai, UAE",
-    "service": "BIM Services",
-    "categories": ["BIM", "Commercial"],
-    "description": "Revit project template, naming standards, and coordination process for a mid-rise commercial rollout across consultant teams.",
-    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
-    "featured": true
-  },
-  {
-    "id": "proj-04",
-    "name": "Hospitality Concept Package",
-    "location": "Cape Town, South Africa",
-    "service": "Interior Design",
-    "categories": ["Interior Design", "Hospitality", "Commercial"],
-    "description": "Concept mood, material palette, and FF&E direction for a boutique hospitality operator prior to documentation stage.",
-    "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1200&q=80",
-    "featured": false
-  },
-  {
-    "id": "proj-05",
-    "name": "Council Submission Package",
-    "location": "UK (confidential)",
-    "service": "Architecture",
-    "categories": ["Architecture", "Technical Documentation"],
-    "description": "Drawing sets and submission coordination support for a residential extension with parking and landscape interface.",
-    "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
-    "featured": false
-  },
-  {
-    "id": "proj-06",
-    "name": "Model Audit & Clash Review",
-    "location": "Remote / UAE",
-    "service": "BIM Services",
-    "categories": ["BIM", "Technical Documentation"],
-    "description": "Structured model audit, clash review workshops, and drawing alignment for contractor handover.",
-    "image": "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=80",
+    "categories": ["Architecture", "Technical Documentation", "Healthcare"],
+    "description": "Technical background plan and layout documentation supporting the Harley Street private healthcare fit-out.",
+    "image": "assets/projects/harley-street-plan.png",
     "featured": false
   }
 ]

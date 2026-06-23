@@ -3,7 +3,8 @@
 
   /* --- Site configuration (update before launch) --- */
   var WHATSAPP_NUMBER = "27123456789";
-  var EMAIL = "hello@dimensiongroup.example";
+  var EMAIL = "hello@dimensiongroup.co.uk";
+  var PHONE = "+44 20 3355 3106";
   var SITE_DOMAIN = "dimensiongroupglobal.com";
   /* WhatsApp: country code + number, no + or spaces. Update EMAIL before launch. */
 
@@ -33,6 +34,7 @@
   window.DimensionSite = window.DimensionSite || {};
   window.DimensionSite.WHATSAPP_NUMBER = WHATSAPP_NUMBER;
   window.DimensionSite.EMAIL = EMAIL;
+  window.DimensionSite.PHONE = PHONE;
   window.DimensionSite.SITE_DOMAIN = SITE_DOMAIN;
 
   window.DimensionSite.whatsappHref = function (prefill) {
@@ -49,4 +51,10 @@
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener noreferrer");
   });
+
+  var footerEmail = document.getElementById("footer-email");
+  if (footerEmail) {
+    footerEmail.href = "mailto:" + EMAIL;
+    footerEmail.textContent = EMAIL;
+  }
 })();
