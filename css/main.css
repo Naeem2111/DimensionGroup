@@ -743,6 +743,42 @@ main {
   }
 }
 
+/* About page */
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(var(--space-lg), 5vw, var(--space-xl));
+  align-items: start;
+}
+
+.about-layout h1,
+.about-layout p {
+  max-width: none;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.about-block h2 {
+  margin-top: 0;
+}
+
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+@media (max-width: 900px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 .list-check {
   list-style: none;
   padding: 0;
@@ -917,11 +953,34 @@ body.modal-open {
 }
 
 /* Services page */
+.services-intro-lede {
+  max-width: 42em;
+  margin-bottom: 0;
+}
+
+.service-detail > .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.service-detail .service-text p,
+.service-detail .service-sub-lede,
+.service-detail .bim-category-intro,
+.service-detail .bim-category-note,
+.service-detail .project-highlight-text p {
+  max-width: none;
+}
+
+.service-detail > .container > .service-block:first-child {
+  padding-top: var(--space-lg);
+}
+
 .service-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
-  align-items: center;
+  align-items: start;
   padding: var(--space-xl) 0;
   border-bottom: 1px solid var(--line);
 }
@@ -948,16 +1007,17 @@ body.modal-open {
 }
 
 .service-media {
-  aspect-ratio: 16 / 10;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--line);
+  background: var(--surface);
+  line-height: 0;
 }
 
 .service-media img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
 }
 
 .service-actions {
@@ -995,6 +1055,26 @@ main > section.section-tight + section.section-tight {
   font-size: clamp(1.35rem, 2.5vw, 1.75rem);
 }
 
+.service-subsection-head {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  text-align: left;
+}
+
+.service-subsection-head .service-sub-lede {
+  margin-bottom: 0;
+}
+
+.service-subsection-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
 .service-sub-lede {
   color: var(--muted);
   max-width: 40em;
@@ -1008,6 +1088,7 @@ main > section.section-tight + section.section-tight {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: var(--space-md);
+  text-align: left;
 }
 
 .service-offerings li {
@@ -1017,12 +1098,22 @@ main > section.section-tight + section.section-tight {
   padding: var(--space-md);
   font-size: 0.9375rem;
   line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .service-offerings strong {
   display: block;
   color: var(--ink);
   margin-bottom: 0.35rem;
+}
+
+.service-offerings li span {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
 }
 
 .project-highlight {
@@ -1149,18 +1240,19 @@ main > section.section-tight + section.section-tight {
   margin: 0 0 var(--space-md);
   padding-bottom: var(--space-sm);
   border-bottom: 2px solid var(--accent);
-  display: inline-block;
+  display: block;
+  width: 100%;
 }
 
 .bim-category-intro {
-  max-width: 52em;
+  max-width: none;
   font-size: 1.0625rem;
   line-height: 1.65;
   margin-bottom: var(--space-md);
 }
 
 .bim-category-note {
-  max-width: 48em;
+  max-width: none;
   font-size: 0.9375rem;
   color: var(--muted);
   font-style: italic;
