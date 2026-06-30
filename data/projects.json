@@ -1,22 +1,24 @@
 [
   {
     "id": "proj-albermarle",
-    "name": "26 Albemarle Street",
+    "name": "Albemarle Street",
     "location": "Mayfair, London, UK",
     "service": "Architecture",
     "categories": ["Architecture", "Residential", "Commercial", "BIM"],
     "description": "Luxury redevelopment in Mayfair — restoration of a historic facade with a Revit-based BIM solution using point cloud scans, technical documentation, and construction support.",
     "image": "assets/projects/albermarle-street.png",
+    "detailImage": "assets/projects/albermarle-board.png",
     "featured": true
   },
   {
     "id": "proj-harley-street",
-    "name": "22 Harley Street",
+    "name": "Harley Street",
     "location": "London, UK",
     "service": "Architecture",
     "categories": ["Architecture", "BIM", "Healthcare", "Heritage"],
     "description": "Heritage-listed healthcare refurbishment — BIM coordination, point cloud capture, bespoke Revit families, and coordinated documentation for a premium private medical environment.",
     "image": "assets/projects/harley-street-render.png",
+    "detailImage": "assets/projects/harley-street-board.png",
     "featured": true
   },
   {
@@ -37,6 +39,7 @@
     "categories": ["Architecture", "Commercial", "Heritage"],
     "description": "Mixed-use redevelopment in Soho — 3D Revit models, heritage facade retention, and coordination with structural and MEP consultants through construction documentation.",
     "image": "assets/projects/brewer-street.png",
+    "detailImage": "assets/projects/brewer-street-board.png",
     "featured": false
   },
   {
@@ -47,6 +50,7 @@
     "categories": ["Architecture", "Education", "BIM"],
     "description": "Adaptive redevelopment of a former school site — Revit models, BIM deliverables, and comparative elevation analysis for a sensitive urban context.",
     "image": "assets/projects/rectory-gardens-school.png",
+    "detailImage": "assets/projects/rectory-gardens-board.png",
     "featured": false
   },
   {
@@ -57,6 +61,7 @@
     "categories": ["BIM", "Commercial", "Industrial"],
     "description": "Digital documentation of existing storage facilities — federated 3D Revit models and coordinated 2D plans, sections, and elevations for lockup units across the portfolio.",
     "image": "assets/projects/storebox-render.png",
+    "detailImage": "assets/projects/storebox-board.png",
     "featured": false
   }
 ]

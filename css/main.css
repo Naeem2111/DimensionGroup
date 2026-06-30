@@ -620,7 +620,7 @@ main {
 /* What we do — home */
 .what-we-do-grid {
   display: grid;
-  grid-template-columns: minmax(260px, 0.85fr) 1.75fr;
+  grid-template-columns: 1fr;
   gap: clamp(var(--space-lg), 4vw, var(--space-xl));
   align-items: start;
 }
@@ -646,15 +646,17 @@ main {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: clamp(0.625rem, 1.2vw, 0.875rem);
+  align-items: stretch;
 }
 
 .service-card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);
-  padding: clamp(1.25rem, 2vw, 1.75rem) clamp(1rem, 1.5vw, 1.25rem);
+  padding: clamp(1.125rem, 1.8vw, 1.5rem) clamp(0.875rem, 1.2vw, 1rem);
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-height: 17.5rem;
   color: inherit;
   text-decoration: none;
@@ -669,36 +671,39 @@ main {
 }
 
 .service-card-icon {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
   color: var(--accent);
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   flex-shrink: 0;
 }
 
 .service-card h3 {
-  font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  min-height: 2.7em;
   margin: 0 0 var(--space-sm);
   color: var(--ink);
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .service-card p {
-  font-size: 0.8125rem;
-  line-height: 1.55;
+  font-size: 0.75rem;
+  line-height: 1.5;
   color: var(--muted);
   margin: 0;
   max-width: none;
+  flex: 1;
+}
+
+@media (min-width: 1400px) {
+  .what-we-do-grid {
+    grid-template-columns: minmax(240px, 0.82fr) 2fr;
+  }
 }
 
 @media (max-width: 1200px) {
-  .what-we-do-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .what-we-do-intro h2 {
-    max-width: none;
-  }
-
   .service-cards-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -717,9 +722,9 @@ main {
   }
 
   .service-card {
-    flex: 0 0 min(11.5rem, 72vw);
+    flex: 0 0 min(10.5rem, 72vw);
     scroll-snap-align: start;
-    min-height: 16rem;
+    min-height: 15.5rem;
   }
 }
 
@@ -744,19 +749,19 @@ main {
 }
 
 .list-check li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
   padding: var(--space-sm) 0;
-  padding-left: 1.75rem;
-  position: relative;
   border-bottom: 1px solid var(--line);
 }
 
 .list-check li::before {
   content: "";
-  position: absolute;
-  left: 0;
-  top: 1.15em;
+  flex-shrink: 0;
   width: 8px;
-  height: 1px;
+  height: 2px;
+  margin-top: 0.55em;
   background: var(--accent);
 }
 
@@ -778,6 +783,102 @@ main {
 .project-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 40px rgba(20, 20, 20, 0.1);
+}
+
+.project-card--interactive {
+  cursor: pointer;
+}
+
+.project-card--interactive:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.project-card-hint {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--site-gutter);
+}
+
+.project-modal[hidden] {
+  display: none;
+}
+
+.project-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.78);
+  backdrop-filter: blur(4px);
+}
+
+.project-modal-panel {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  width: min(72rem, 100%);
+  max-height: min(92vh, 100%);
+  overflow: auto;
+  padding: var(--space-md);
+  box-shadow: 0 24px 64px rgba(20, 20, 20, 0.28);
+}
+
+.project-modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-left: auto;
+  margin-bottom: var(--space-xs);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), background 0.2s var(--ease);
+}
+
+.project-modal-close:hover {
+  border-color: var(--line-strong);
+  background: var(--bg);
+}
+
+.project-modal-title {
+  clear: both;
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.project-modal-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
 }
 
 .project-card-image {
