@@ -75,13 +75,16 @@
             </div>
           </div>
           <div class="hero-visual">
-            <img
-              class="hero-image"
-              src="assets/projects/harley-street-render.png"
-              alt="Harley Street Private Healthcare — Dimension Group interior design"
-              width="900"
-              height="675"
-            />
+            <figure class="hero-image-wrap">
+              <img
+                class="hero-image"
+                src="assets/projects/harley-street-render.png"
+                alt="Harley Street Private Healthcare — Dimension Group interior design"
+                width="900"
+                height="675"
+              />
+              <figcaption class="hero-image-caption">Rendered by author</figcaption>
+            </figure>
             <div class="hero-stats" aria-label="Dimension Group at a glance">
               <div class="hero-stat">
                 <svg class="hero-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -121,35 +124,71 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <p class="section-label">What we do</p>
-          <h2>Three core ways we support your project</h2>
-          <div class="cards-3" style="margin-top: var(--space-lg)">
-            <article class="card">
-              <h3>Interior design</h3>
-              <p>
-                Concept through documentation — mood boards, spatial planning, finishes, furniture
-                layout, and packages for residential, commercial, and hospitality projects.
-              </p>
-              <a class="card-link" href="contact.html#quote">Explore interior design →</a>
-            </article>
-            <article class="card">
+      <section class="section what-we-do">
+        <div class="container what-we-do-grid">
+          <div class="what-we-do-intro">
+            <p class="section-label">What we do</p>
+            <h2>Integrated design and BIM services from concept to construction.</h2>
+            <div class="what-we-do-rule" aria-hidden="true"></div>
+          </div>
+          <div class="service-cards-row">
+            <a class="service-card" href="services.html#architecture">
+              <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M24 8 10 16v26h28V16L24 8z"/>
+                <path d="M18 24h.01M24 24h.01M30 24h.01M18 30h.01M24 30h.01M30 30h.01"/>
+              </svg>
               <h3>Architecture</h3>
-              <p>
-                Concept design, planning applications, technical documentation, and consultant
-                coordination for residential and commercial work — UK and international.
-              </p>
-              <a class="card-link" href="services.html#architecture">Explore architecture →</a>
-            </article>
-            <article class="card">
-              <h3>BIM services</h3>
-              <p>
-                Revit modelling, BIM coordination, model auditing, drawing production, family
-                creation, and BIM management for multidisciplinary teams.
-              </p>
-              <a class="card-link" href="services.html#bim">Explore BIM →</a>
-            </article>
+              <p>Concept design, planning, and detailed documentation for every scale.</p>
+            </a>
+            <a class="service-card" href="services.html#bim-strategy">
+              <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M24 6 6 16v16l18 10 18-10V16L24 6z"/>
+                <path d="M6 16l18 10 18-10M24 26V42"/>
+              </svg>
+              <h3>BIM Management</h3>
+              <p>BIM strategy, setup, standards, and implementation tailored to your project needs.</p>
+            </a>
+            <a class="service-card" href="services.html#bim-project">
+              <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M10 30V18l8-6 8 6v12"/>
+                <path d="M18 12v18"/>
+                <path d="M26 22l8-6v18"/>
+                <path d="M34 16v18"/>
+                <path d="M8 36h32"/>
+              </svg>
+              <h3>BIM Coordination</h3>
+              <p>Clash detection, coordination, and model management for accurate collaboration.</p>
+            </a>
+            <a class="service-card" href="contact.html#quote">
+              <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M10 34V24a3 3 0 0 1 3-3h6"/>
+                <path d="M13 34v4h6v-4"/>
+                <path d="M16 21v-3"/>
+                <path d="M30 8v28"/>
+                <path d="M26 12h8"/>
+                <path d="M28 36h4"/>
+              </svg>
+              <h3>Interior Design</h3>
+              <p>Functional, beautiful spaces aligned with brand, user, and project goals.</p>
+            </a>
+            <a class="service-card" href="services.html#bim-documentation">
+              <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 8h20l8 8v28a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2z"/>
+                <path d="M32 8v8h8"/>
+                <path d="M16 22h16M16 30h16M16 38h10"/>
+              </svg>
+              <h3>Construction Documentation</h3>
+              <p>High-quality, buildable documentation delivered on time.</p>
+            </a>
+            <a class="service-card" href="services.html#bim-digital-assets">
+              <svg class="service-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M24 4 4 14v20l20 10 20-10V14L24 4z"/>
+                <path d="M4 14l20 10 20-10M24 24v20"/>
+                <path d="M14 19l10 5 10-5"/>
+              </svg>
+              <h3>Revit Families &amp; Templates</h3>
+              <p>Custom families and templates to improve efficiency and consistency.</p>
+            </a>
           </div>
         </div>
       </section>
@@ -168,7 +207,7 @@
           <div>
             <ul class="list-check">
               <li>International experience alongside deep local understanding</li>
-              <li>Strong documentation habits — fewer surprises on site</li>
+              <li>Strong documentation habits fewer surprises on site</li>
               <li>BIM workflows built for real projects, not theory</li>
               <li>Direct access: email or form for quick questions</li>
             </ul>
