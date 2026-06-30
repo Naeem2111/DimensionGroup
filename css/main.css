@@ -455,47 +455,101 @@ main {
   box-shadow: 0 20px 44px rgba(21, 101, 192, 0.1);
 }
 
-.hero-3d-frame {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  min-height: 200px;
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
   background: var(--surface);
   border: 1px solid rgba(21, 101, 192, 0.12);
   border-radius: var(--radius-xl);
-  overflow: hidden;
   box-shadow: 0 12px 32px rgba(21, 101, 192, 0.08);
+  overflow: hidden;
 }
 
-.hero-3d-frame model-viewer {
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  --poster-color: var(--bg);
-}
-
-.hero-3d-frame model-viewer:not(.is-ready) {
-  opacity: 0;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.hero-3d-fallback {
-  position: absolute;
-  inset: 0;
+.hero-stat {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: var(--space-md);
   text-align: center;
-  font-size: 0.875rem;
-  color: var(--muted);
-  background: linear-gradient(135deg, var(--bg-elevated), var(--line));
+  padding: var(--space-md) var(--space-sm);
+  min-height: 168px;
+  border-right: 1px solid var(--line);
 }
 
-.hero-3d-fallback code {
+.hero-stat:last-child {
+  border-right: none;
+}
+
+.hero-stat-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--accent);
+  margin-bottom: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.hero-stat-value {
+  margin: 0 0 0.15rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.hero-stat-label {
+  margin: 0;
   font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--muted);
+  max-width: none;
+}
+
+.hero-stat--services {
+  gap: 0.1rem;
+}
+
+.hero-stat-services {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .hero-stat:nth-child(1),
+  .hero-stat:nth-child(2) {
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+    min-height: auto;
+    padding: var(--space-md);
+  }
+
+  .hero-stat:last-child {
+    border-bottom: none;
+  }
 }
 
 /* Cards & services */

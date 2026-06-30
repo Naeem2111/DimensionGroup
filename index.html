@@ -82,17 +82,40 @@
               width="900"
               height="675"
             />
-            <div class="hero-3d-frame">
-              <model-viewer
-                id="hero-model"
-                src="assets/models/hero.glb"
-                alt="Interactive project 3D model"
-                camera-controls
-                touch-action="pan-y"
-                shadow-intensity="0.6"
-                poster="assets/projects/harley-street-render.png"
-              ></model-viewer>
-              <p class="hero-3d-fallback">Interactive 3D preview — add <code>assets/models/hero.glb</code> from your portfolio.</p>
+            <div class="hero-stats" aria-label="Dimension Group at a glance">
+              <div class="hero-stat">
+                <svg class="hero-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/>
+                </svg>
+                <p class="hero-stat-value">40+</p>
+                <p class="hero-stat-label">Projects<br />Delivered</p>
+              </div>
+              <div class="hero-stat">
+                <svg class="hero-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>
+                </svg>
+                <p class="hero-stat-value">5</p>
+                <p class="hero-stat-label">Countries<br />Served</p>
+              </div>
+              <div class="hero-stat">
+                <svg class="hero-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <p class="hero-stat-value">3+</p>
+                <p class="hero-stat-label">Years Combined<br />Experience</p>
+              </div>
+              <div class="hero-stat hero-stat--services">
+                <svg class="hero-stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                  <path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/>
+                </svg>
+                <p class="hero-stat-services">Architecture</p>
+                <p class="hero-stat-services">BIM Management</p>
+                <p class="hero-stat-services">Interior Design</p>
+              </div>
             </div>
           </div>
         </div>
@@ -211,9 +234,7 @@
       <p class="footer-bottom">&copy; Dimension Group. All rights reserved.</p>
     </footer>
 
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/hero-3d.js"></script>
     <script src="js/projects.js"></script>
   </body>
 </html>
