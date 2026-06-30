@@ -165,9 +165,9 @@ img {
 
 .logo img {
   display: block;
-  height: clamp(52px, 10vw, 72px);
+  height: clamp(60px, 12vw, 88px);
   width: auto;
-  max-width: min(360px, 68vw);
+  max-width: min(480px, 78vw);
 }
 
 .nav-desktop {
@@ -1007,6 +1007,8 @@ body.modal-open {
 }
 
 .service-media {
+  position: relative;
+  margin: 0;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1018,6 +1020,23 @@ body.modal-open {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.service-image-caption {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(20, 20, 20, 0.55);
+  border-radius: var(--radius);
+  backdrop-filter: blur(4px);
+  line-height: 1.4;
 }
 
 .service-actions {

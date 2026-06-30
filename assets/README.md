@@ -13,7 +13,8 @@
 | `albermarle-board.png` | 26 Albemarle Street — drawing sheet |
 | `harley-street-render.png` | 22 Harley Street — render (card) |
 | `harley-street-board.png` | 22 Harley Street — drawing sheet |
-| `covent-garden-market.png` | Covent Garden Market — BIM diagram |
+| `covent-garden-market.png` | Covent Garden Market — facade photo (card) |
+| `covent-garden-board.png` | Covent Garden Market — BIM diagram (modal) |
 | `brewer-street-board.png` | Brewer Street — facade photo (card) |
 | `brewer-street.png` | Brewer Street — drawing sheet (modal) |
 | `rectory-gardens-school.png` | Rectory Gardens School — render (card) |

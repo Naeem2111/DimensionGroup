@@ -29,6 +29,7 @@
     "categories": ["BIM", "Commercial", "Heritage"],
     "description": "BIM delivery for a heritage market refurbishment — architectural, structural, and point cloud layers federated for a complex existing building in central London.",
     "image": "assets/projects/covent-garden-market.png",
+    "detailImage": "assets/projects/covent-garden-board.png",
     "featured": true
   },
   {
