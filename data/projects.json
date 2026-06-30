@@ -1,12 +1,22 @@
 [
   {
     "id": "proj-albermarle",
-    "name": "Albemarle Street",
+    "name": "26 Albemarle Street",
     "location": "Mayfair, London, UK",
     "service": "Architecture",
     "categories": ["Architecture", "Residential", "Commercial", "BIM"],
-    "description": "Luxury redevelopment in Mayfair — five storeys with lift access, multiple residential units, Revit-based BIM coordination, technical documentation, and construction support using point cloud capture.",
+    "description": "Luxury redevelopment in Mayfair — restoration of a historic facade with a Revit-based BIM solution using point cloud scans, technical documentation, and construction support.",
     "image": "assets/projects/albermarle-street.png",
+    "featured": true
+  },
+  {
+    "id": "proj-harley-street",
+    "name": "22 Harley Street",
+    "location": "London, UK",
+    "service": "Architecture",
+    "categories": ["Architecture", "BIM", "Healthcare", "Heritage"],
+    "description": "Heritage-listed healthcare refurbishment — BIM coordination, point cloud capture, bespoke Revit families, and coordinated documentation for a premium private medical environment.",
+    "image": "assets/projects/harley-street-render.png",
     "featured": true
   },
   {
@@ -15,18 +25,38 @@
     "location": "London, UK",
     "service": "BIM Services",
     "categories": ["BIM", "Commercial", "Heritage"],
-    "description": "BIM delivery for a heritage market refurbishment — Revit modelling, multidisciplinary coordination, model auditing, drawing production, family creation, and BIM management.",
+    "description": "BIM delivery for a heritage market refurbishment — architectural, structural, and point cloud layers federated for a complex existing building in central London.",
     "image": "assets/projects/covent-garden-market.png",
     "featured": true
   },
   {
-    "id": "proj-harley-street-plan",
-    "name": "Harley Street — Background Plan",
+    "id": "proj-brewer-street",
+    "name": "Brewer Street",
+    "location": "Soho, London, UK",
+    "service": "Architecture",
+    "categories": ["Architecture", "Commercial", "Heritage"],
+    "description": "Mixed-use redevelopment in Soho — 3D Revit models, heritage facade retention, and coordination with structural and MEP consultants through construction documentation.",
+    "image": "assets/projects/brewer-street.png",
+    "featured": false
+  },
+  {
+    "id": "proj-rectory-gardens",
+    "name": "Rectory Gardens School",
     "location": "London, UK",
     "service": "Architecture",
-    "categories": ["Architecture", "Technical Documentation", "Healthcare"],
-    "description": "Technical background plan and layout documentation supporting the Harley Street private healthcare fit-out.",
-    "image": "assets/projects/harley-street-plan.png",
+    "categories": ["Architecture", "Education", "BIM"],
+    "description": "Adaptive redevelopment of a former school site — Revit models, BIM deliverables, and comparative elevation analysis for a sensitive urban context.",
+    "image": "assets/projects/rectory-gardens-school.png",
+    "featured": false
+  },
+  {
+    "id": "proj-storebox",
+    "name": "Storebox Lockup Units",
+    "location": "London, UK",
+    "service": "BIM Services",
+    "categories": ["BIM", "Commercial", "Industrial"],
+    "description": "Digital documentation of existing storage facilities — federated 3D Revit models and coordinated 2D plans, sections, and elevations for lockup units across the portfolio.",
+    "image": "assets/projects/storebox-render.png",
     "featured": false
   }
 ]

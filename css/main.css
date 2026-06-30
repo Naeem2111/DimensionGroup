@@ -1,7 +1,7 @@
 /* Dimension Group — architectural, premium static site */
 :root {
-  --bg: #f5f4f0;
-  --bg-elevated: #fafaf8;
+  --bg: #ffffff;
+  --bg-elevated: #ffffff;
   --surface: #ffffff;
   --ink: #141414;
   --ink-soft: #3d3d3a;
@@ -38,6 +38,7 @@
 
 html {
   scroll-behavior: smooth;
+  min-height: 100%;
 }
 
 body {
@@ -46,8 +47,25 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--ink-soft);
-  background: var(--bg);
+  background: transparent;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 100%;
+}
+
+/* Sitewide blueprint — fixed layer behind all page content */
+body.grid-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--blueprint-bg);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='288' height='288' viewBox='0 0 288 288'%3E%3Cpath d='M288 0H0V288' fill='none' stroke='%231565C0' stroke-opacity='0.09' stroke-width='1'/%3E%3Cpath d='M0 144h288M144 0v288' fill='none' stroke='%231565C0' stroke-opacity='0.06' stroke-width='1' stroke-dasharray='2 10'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M72 0H0V72' fill='none' stroke='%231565C0' stroke-opacity='0.14' stroke-width='1' stroke-dasharray='5 7'/%3E%3C/svg%3E");
+  background-size: 288px 288px, 72px 72px;
+  background-position: -1px -1px, -1px -1px;
 }
 
 body.menu-open {
@@ -112,13 +130,9 @@ img {
   border: 0;
 }
 
-/* Architectural grid background */
+/* Legacy class — blueprint applied via body.grid-bg::before above */
 .grid-bg {
-  background-image:
-    linear-gradient(var(--grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  background-size: 48px 48px;
-  background-position: -1px -1px;
+  background: transparent;
 }
 
 /* Layout */
@@ -216,7 +230,8 @@ img {
   position: fixed;
   inset: 0;
   top: 56px;
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(8px);
   padding: var(--space-md);
   flex-direction: column;
   gap: var(--space-sm);
@@ -238,6 +253,15 @@ img {
 
 main {
   min-height: 50vh;
+  background: transparent;
+}
+
+.section,
+.section-tight,
+.hero,
+.service-detail,
+.contact-layout {
+  background: transparent;
 }
 
 .footer {
@@ -382,39 +406,10 @@ main {
   position: relative;
   padding: var(--space-2xl) 0 calc(var(--space-2xl) + 2rem);
   overflow: hidden;
-  background: var(--blueprint-bg);
-}
-
-.hero-blueprint {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.hero-blueprint-grid {
-  position: absolute;
-  inset: 0;
-  background-color: #ffffff;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M72 0H0V72' fill='none' stroke='%231565C0' stroke-opacity='0.12' stroke-width='1' stroke-dasharray='5 7'/%3E%3C/svg%3E");
-  background-size: 72px 72px;
-}
-
-.hero-blueprint-plan {
-  position: absolute;
-  left: 50%;
-  top: 58%;
-  transform: translate(-50%, -50%);
-  width: min(92%, 1080px);
-  max-height: 75%;
-  object-fit: contain;
-  opacity: 0.14;
-  filter: grayscale(1) contrast(1.05);
+  background: transparent;
 }
 
 .hero-grid {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: 1fr minmax(280px, 420px);
   gap: var(--space-xl);

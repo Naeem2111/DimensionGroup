@@ -3,31 +3,29 @@
 ## Branding
 | File | Purpose |
 |------|---------|
-| `images/logo.png` | Header logo — DG + DIMENSION GROUP (primary) |
-| `images/logo-with-dimensions.png` | Full logo with blueprint dimension lines |
-| `images/logo-thin-dimensions.png` | Thin-line monogram + dimension lines |
-| `images/logo-alt.png` | Alternate DG lockup |
-| `images/hero.jpg` | Home hero (Albemarle Street render) |
-
-## Services (`services/`)
-| Folder | Hero image | Portfolio project |
-|--------|------------|-------------------|
-| `architecture/` | Albemarle Street render | Albemarle Street |
-| `bim/` | Covent Garden Market BIM diagram | Covent Garden Market |
-| `interior-design/` | Brewer Street interior | Brewer Street |
+| `images/logo.png` | Header logo |
+| `images/hero.jpg` | Optional home hero still |
 
 ## Projects (`projects/`)
 | File | Project |
 |------|---------|
-| `albermarle-street.png` | Albemarle Street — Architecture, Mayfair |
-| `covent-garden-market.png` | Covent Garden Market — BIM |
-| `brewer-street.png` | Brewer Street — Interior design |
-| `harley-street-render.png` | Harley Street Private Healthcare — Interior |
-| `harley-street-plan.png` | Harley Street — Technical plan |
+| `albermarle-street.png` | 26 Albemarle Street — render (card) |
+| `albermarle-board.png` | 26 Albemarle Street — drawing sheet |
+| `harley-street-render.png` | 22 Harley Street — render (card) |
+| `harley-street-board.png` | 22 Harley Street — drawing sheet |
+| `covent-garden-market.png` | Covent Garden Market — BIM diagram |
+| `brewer-street.png` | Brewer Street — render (card) |
+| `brewer-street-board.png` | Brewer Street — drawing sheet |
+| `rectory-gardens-school.png` | Rectory Gardens School — render (card) |
+| `rectory-gardens-board.png` | Rectory Gardens School — drawing sheet |
+| `storebox-render.png` | Storebox Lockup Units — render (card) |
+| `storebox-board.png` | Storebox Lockup Units — drawing sheet |
 
-## 3D
-| File | Purpose |
-|------|---------|
-| `models/hero.glb` | Interactive WebGL hero (optional) |
+Card images are used in `data/projects.json`. `-board.png` files are portfolio sheets kept for future detail pages.
 
-Source files copied from Desktop `What Dimension Group offers` folders.
+## Services heroes (`services/`)
+| Folder | Image |
+|--------|-------|
+| `architecture/` | Albemarle Street render |
+| `bim/` | Covent Garden Market |
+| `interior-design/` | Brewer Street (hidden on site) |
