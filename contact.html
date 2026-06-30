@@ -157,13 +157,15 @@
               </div>
               <div class="form-row">
                 <label for="lead-location">Project location</label>
-                <input
-                  id="lead-location"
-                  name="project-location"
-                  type="text"
-                  placeholder="City, region, country"
-                  required
-                />
+                <select id="lead-location" name="project-location" required>
+                  <option value="">Select region…</option>
+                  <option value="South Africa">South Africa</option>
+                  <option value="United Kingdom">United Kingdom</option>
+                  <option value="Germany">Germany</option>
+                  <option value="United Arab Emirates">United Arab Emirates</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Other / international">Other / international</option>
+                </select>
               </div>
               <div class="form-row">
                 <label for="lead-project-type">Project type</label>
@@ -181,13 +183,8 @@
               </div>
               <div class="form-row">
                 <label for="lead-budget">Budget range</label>
-                <select id="lead-budget" name="budget" required>
-                  <option value="">Select…</option>
-                  <option value="Under £50k / equivalent">Under £50k / equivalent</option>
-                  <option value="£50k – £150k / equivalent">£50k – £150k / equivalent</option>
-                  <option value="£150k – £500k / equivalent">£150k – £500k / equivalent</option>
-                  <option value="£500k+ / equivalent">£500k+ / equivalent</option>
-                  <option value="Prefer to discuss">Prefer to discuss</option>
+                <select id="lead-budget" name="budget" required disabled>
+                  <option value="">Select project location first…</option>
                 </select>
               </div>
               <div class="form-row">
@@ -246,23 +243,6 @@
               </p>
             </div>
           </form>
-        </div>
-      </section>
-
-      <section class="section section-tight">
-        <div class="container">
-          <h2 style="font-size: 1.25rem">Map (optional)</h2>
-          <p style="max-width: 42em; font-size: 0.9375rem; color: var(--muted)">
-            Replace the embed below with your studio coordinates or remove this block. OpenStreetMap
-            example — no API key required.
-          </p>
-          <div class="map-embed">
-            <iframe
-              title="Map placeholder"
-              loading="lazy"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=18.35%2C-33.95%2C18.45%2C-33.90&amp;layer=mapnik"
-            ></iframe>
-          </div>
         </div>
       </section>
     </main>

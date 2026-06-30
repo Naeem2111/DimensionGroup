@@ -5,6 +5,51 @@
   var current = 0;
   var selectedService = null;
 
+  var BUDGET_BY_REGION = {
+    "South Africa": [
+      "Under R1.2 million",
+      "R1.2 million – R3.5 million",
+      "R3.5 million – R12 million",
+      "R12 million+",
+      "Prefer to discuss",
+    ],
+    "United Kingdom": [
+      "Under £50k",
+      "£50k – £150k",
+      "£150k – £500k",
+      "£500k+",
+      "Prefer to discuss",
+    ],
+    Germany: [
+      "Under €60k",
+      "€60k – €175k",
+      "€175k – €580k",
+      "€580k+",
+      "Prefer to discuss",
+    ],
+    "United Arab Emirates": [
+      "Under AED 250k",
+      "AED 250k – AED 700k",
+      "AED 700k – AED 2.3M",
+      "AED 2.3M+",
+      "Prefer to discuss",
+    ],
+    Australia: [
+      "Under A$95k",
+      "A$95k – A$285k",
+      "A$285k – A$950k",
+      "A$950k+",
+      "Prefer to discuss",
+    ],
+    "Other / international": [
+      "Under £50k / equivalent",
+      "£50k – £150k / equivalent",
+      "£150k – £500k / equivalent",
+      "£500k+ / equivalent",
+      "Prefer to discuss",
+    ],
+  };
+
   function showStep(n) {
     steps.forEach(function (el, i) {
       el.classList.toggle("is-active", i === n);
@@ -15,6 +60,41 @@
   function val(id) {
     var el = document.getElementById(id);
     return el ? el.value.trim() : "";
+  }
+
+  function updateBudgetOptions(region) {
+    var budgetSelect = document.getElementById("lead-budget");
+    if (!budgetSelect) return;
+
+    budgetSelect.innerHTML = "";
+    var placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = region ? "Select…" : "Select project location first…";
+    budgetSelect.appendChild(placeholder);
+
+    if (!region || !BUDGET_BY_REGION[region]) {
+      budgetSelect.disabled = true;
+      budgetSelect.required = false;
+      return;
+    }
+
+    BUDGET_BY_REGION[region].forEach(function (label) {
+      var option = document.createElement("option");
+      option.value = label;
+      option.textContent = label;
+      budgetSelect.appendChild(option);
+    });
+
+    budgetSelect.disabled = false;
+    budgetSelect.required = true;
+  }
+
+  function syncContactRegion(region) {
+    var regionSelect = document.getElementById("contact-region");
+    if (!regionSelect || !region || regionSelect.value) return;
+    if (Object.prototype.hasOwnProperty.call(BUDGET_BY_REGION, region)) {
+      regionSelect.value = region;
+    }
   }
 
   function buildEmailBody() {
@@ -59,6 +139,14 @@
     steps = Array.prototype.slice.call(wizard.querySelectorAll(".form-step"));
     if (!steps.length) return;
 
+    var locationSelect = document.getElementById("lead-location");
+    if (locationSelect) {
+      locationSelect.addEventListener("change", function () {
+        updateBudgetOptions(locationSelect.value);
+        syncContactRegion(locationSelect.value);
+      });
+    }
+
     document.querySelectorAll("[data-select-service]").forEach(function (btn) {
       btn.addEventListener("click", function () {
         selectedService = btn.getAttribute("data-select-service");
@@ -81,6 +169,7 @@
           alert("Please complete all project fields before continuing.");
           return;
         }
+        syncContactRegion(location);
         showStep(2);
       });
     }
