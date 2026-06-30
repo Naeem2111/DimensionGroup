@@ -38,8 +38,8 @@
     "service": "Architecture",
     "categories": ["Architecture", "Commercial", "Heritage"],
     "description": "Mixed-use redevelopment in Soho — 3D Revit models, heritage facade retention, and coordination with structural and MEP consultants through construction documentation.",
-    "image": "assets/projects/brewer-street.png",
-    "detailImage": "assets/projects/brewer-street-board.png",
+    "image": "assets/projects/brewer-street-board.png",
+    "detailImage": "assets/projects/brewer-street.png",
     "featured": false
   },
   {

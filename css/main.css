@@ -23,6 +23,7 @@
   --space-lg: 2.5rem;
   --space-xl: 4rem;
   --space-2xl: 6rem;
+  --page-top: clamp(2rem, 3.5vw, 3.25rem);
   --max: 92rem;
   --site-gutter: clamp(1rem, 2vw, 1.75rem);
   --narrow: 40rem;
@@ -149,7 +150,7 @@ img {
 .header-inner {
   max-width: var(--max);
   margin: 0 auto;
-  padding: var(--space-sm) var(--site-gutter);
+  padding: 0.65rem var(--site-gutter);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -405,7 +406,7 @@ main {
 /* Hero */
 .hero {
   position: relative;
-  padding: var(--space-2xl) 0 calc(var(--space-2xl) + 2rem);
+  padding: var(--page-top) 0 calc(var(--space-2xl) + 2rem);
   overflow: hidden;
   background: transparent;
 }
@@ -973,6 +974,15 @@ body.modal-open {
 
 .service-detail:first-of-type {
   border-top: none;
+}
+
+/* Page intro — same top gap below navbar on every page */
+main > section:first-child {
+  padding-top: var(--page-top);
+}
+
+main > section.section-tight + section.section-tight {
+  padding-top: var(--space-md);
 }
 
 .service-subsection {

@@ -14,8 +14,8 @@
 | `harley-street-render.png` | 22 Harley Street — render (card) |
 | `harley-street-board.png` | 22 Harley Street — drawing sheet |
 | `covent-garden-market.png` | Covent Garden Market — BIM diagram |
-| `brewer-street.png` | Brewer Street — render (card) |
-| `brewer-street-board.png` | Brewer Street — drawing sheet |
+| `brewer-street-board.png` | Brewer Street — facade photo (card) |
+| `brewer-street.png` | Brewer Street — drawing sheet (modal) |
 | `rectory-gardens-school.png` | Rectory Gardens School — render (card) |
 | `rectory-gardens-board.png` | Rectory Gardens School — drawing sheet |
 | `storebox-render.png` | Storebox Lockup Units — render (card) |
