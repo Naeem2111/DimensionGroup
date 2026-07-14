@@ -6,7 +6,8 @@
   var EMAIL = "info@dimensiongroupglobal.com";
   var PHONE = "+44 20 3355 3106";
   var SITE_DOMAIN = "dimensiongroupglobal.com";
-  /* WhatsApp: country code + number, no + or spaces. Update EMAIL before launch. */
+  /* Set after dashboard deploy on Vercel — leave empty to use mailto fallback */
+  var ENQUIRY_API = "https://dimension-group-dashboard.vercel.app/api/public/enquiry";
 
   function openMenu(open) {
     var btn = document.querySelector(".btn-nav-toggle");
@@ -36,6 +37,7 @@
   window.DimensionSite.EMAIL = EMAIL;
   window.DimensionSite.PHONE = PHONE;
   window.DimensionSite.SITE_DOMAIN = SITE_DOMAIN;
+  window.DimensionSite.ENQUIRY_API = ENQUIRY_API;
 
   window.DimensionSite.whatsappHref = function (prefill) {
     var base = "https://wa.me/" + WHATSAPP_NUMBER;

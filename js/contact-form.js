@@ -97,6 +97,57 @@
     }
   }
 
+  function submitEnquiry(payload, onSuccess, onFallback) {
+    var endpoint =
+      window.DimensionSite && window.DimensionSite.ENQUIRY_API
+        ? window.DimensionSite.ENQUIRY_API.trim()
+        : "";
+    if (!endpoint) {
+      onFallback();
+      return;
+    }
+    fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    })
+      .then(function (res) {
+        if (!res.ok) throw new Error("Request failed");
+        return res.json();
+      })
+      .then(function () {
+        onSuccess();
+      })
+      .catch(function () {
+        onFallback();
+      });
+  }
+
+  function mailtoQuote() {
+    var emailTo =
+      (window.DimensionSite && window.DimensionSite.EMAIL) || "info@dimensiongroupglobal.com";
+    var subject = encodeURIComponent("Enquiry: " + selectedService + " — Dimension Group");
+    var body = encodeURIComponent(buildEmailBody());
+    window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
+  }
+
+  function mailtoSimple(name, email, msg) {
+    var emailTo =
+      (window.DimensionSite && window.DimensionSite.EMAIL) || "info@dimensiongroupglobal.com";
+    var subject = encodeURIComponent("Website contact — Dimension Group");
+    var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + msg);
+    window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
+  }
+
+  function showSubmittedMessage(formEl) {
+    if (!formEl) return;
+    formEl.innerHTML =
+      '<div class="form-success" style="padding: var(--space-lg); text-align: center;">' +
+      "<h3>Thank you</h3>" +
+      "<p>Your enquiry has been received. We will respond by email shortly.</p>" +
+      "</div>";
+  }
+
   function buildEmailBody() {
     return (
       "New enquiry — Dimension Group\n\n" +
@@ -195,27 +246,55 @@
         showStep(0);
         return;
       }
-      var emailTo =
-        (window.DimensionSite && window.DimensionSite.EMAIL) || "info@dimensiongroupglobal.com";
-      var subject = encodeURIComponent(
-        "Enquiry: " + selectedService + " — Dimension Group"
+      var submitBtn = wizard.querySelector('[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+
+      var payload = {
+        type: "quote",
+        service: selectedService,
+        company: val("lead-company"),
+        projectLocation: val("lead-location"),
+        projectType: val("lead-project-type"),
+        budget: val("lead-budget"),
+        message: val("lead-message"),
+        region: val("contact-region"),
+        name: val("contact-name"),
+        email: val("contact-email"),
+        phone: val("contact-phone") || undefined,
+      };
+
+      submitEnquiry(
+        payload,
+        function () {
+          showSubmittedMessage(wizard);
+        },
+        function () {
+          if (submitBtn) submitBtn.disabled = false;
+          mailtoQuote();
+        }
       );
-      var body = encodeURIComponent(buildEmailBody());
-      window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
     });
 
     var simpleForm = document.getElementById("simple-contact-form");
     if (simpleForm) {
       simpleForm.addEventListener("submit", function (e) {
         e.preventDefault();
-        var emailTo =
-          (window.DimensionSite && window.DimensionSite.EMAIL) || "info@dimensiongroupglobal.com";
         var name = document.getElementById("simple-name").value.trim();
         var email = document.getElementById("simple-email").value.trim();
         var msg = document.getElementById("simple-message").value.trim();
-        var subject = encodeURIComponent("Website contact — Dimension Group");
-        var body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + msg);
-        window.location.href = "mailto:" + emailTo + "?subject=" + subject + "&body=" + body;
+        var submitBtn = simpleForm.querySelector('[type="submit"]');
+        if (submitBtn) submitBtn.disabled = true;
+
+        submitEnquiry(
+          { type: "simple", name: name, email: email, message: msg },
+          function () {
+            showSubmittedMessage(simpleForm);
+          },
+          function () {
+            if (submitBtn) submitBtn.disabled = false;
+            mailtoSimple(name, email, msg);
+          }
+        );
       });
     }
 
