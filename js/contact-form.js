@@ -196,7 +196,7 @@
         return;
       }
       var emailTo =
-        (window.DimensionSite && window.DimensionSite.EMAIL) || "hello@dimensiongroup.co.uk";
+        (window.DimensionSite && window.DimensionSite.EMAIL) || "info@dimensiongroupglobal.com";
       var subject = encodeURIComponent(
         "Enquiry: " + selectedService + " — Dimension Group"
       );
@@ -209,7 +209,7 @@
       simpleForm.addEventListener("submit", function (e) {
         e.preventDefault();
         var emailTo =
-          (window.DimensionSite && window.DimensionSite.EMAIL) || "hello@dimensiongroup.co.uk";
+          (window.DimensionSite && window.DimensionSite.EMAIL) || "info@dimensiongroupglobal.com";
         var name = document.getElementById("simple-name").value.trim();
         var email = document.getElementById("simple-email").value.trim();
         var msg = document.getElementById("simple-message").value.trim();

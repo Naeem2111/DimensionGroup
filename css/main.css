@@ -165,9 +165,9 @@ img {
 
 .logo img {
   display: block;
-  height: clamp(60px, 12vw, 88px);
+  height: clamp(90px, 18vw, 132px);
   width: auto;
-  max-width: min(480px, 78vw);
+  max-width: min(720px, 90vw);
 }
 
 .nav-desktop {

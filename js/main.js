@@ -3,7 +3,7 @@
 
   /* --- Site configuration (update before launch) --- */
   var WHATSAPP_NUMBER = "27123456789";
-  var EMAIL = "hello@dimensiongroup.co.uk";
+  var EMAIL = "info@dimensiongroupglobal.com";
   var PHONE = "+44 20 3355 3106";
   var SITE_DOMAIN = "dimensiongroupglobal.com";
   /* WhatsApp: country code + number, no + or spaces. Update EMAIL before launch. */
