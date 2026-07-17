@@ -7,7 +7,7 @@
   var PHONE = "+44 20 3355 3106";
   var SITE_DOMAIN = "dimensiongroupglobal.com";
   /* Set after dashboard deploy on Vercel — leave empty to use mailto fallback */
-  var ENQUIRY_API = "https://dimension-group-dashboard.vercel.app/api/public/enquiry";
+  var ENQUIRY_API = "https://admin.dimensiongroupglobal.com/api/public/enquiry";
 
   function openMenu(open) {
     var btn = document.querySelector(".btn-nav-toggle");
