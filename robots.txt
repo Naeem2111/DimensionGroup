@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dimensiongroupglobal.com/sitemap.xml
+Sitemap: https://www.dimensiongroupglobal.com/sitemap.xml
