@@ -160,7 +160,7 @@
       })
       .catch(function () {
         container.innerHTML =
-          "<p>Projects could not be loaded. Open the site through a local web server so <code>data/projects.json</code> can be fetched.</p>";
+          "<p>Projects could not be loaded. Please refresh the page or try again later.</p>";
       });
   }
 
@@ -197,7 +197,7 @@
       })
       .catch(function () {
         container.innerHTML =
-          "<p>Could not load projects. Use a local server and check <code>data/projects.json</code>.</p>";
+          "<p>Projects could not be loaded. Please refresh the page or try again later.</p>";
       });
   }
 
